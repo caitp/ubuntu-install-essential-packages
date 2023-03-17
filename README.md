@@ -12,6 +12,13 @@ Once you've done that, reload the systemd manager configuration
 systemctl daemon-reload
 ```
 
+Because this package specifically uses nvidia-detector, and (in its current state), will fail without it, you're going to want to install nvidia-detector using the package *ubuntu-drivers-common*:
+
+```sh
+# as root, or another administrative user.
+apt install ubuntu-drivers-common
+```
+
 ## Why
 
 I made this for me, but maybe it'll help you too, +/- fixups (Particularly if you have
