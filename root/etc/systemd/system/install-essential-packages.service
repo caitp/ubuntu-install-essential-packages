@@ -1,0 +1,13 @@
+[Unit]
+Description="Install essential Debian packages in the background, on boot."
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /usr/local/bin/install-essential-packages.sh | systemd-cat -p info
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
+
